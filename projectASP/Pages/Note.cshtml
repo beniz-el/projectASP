@@ -1,0 +1,70 @@
+﻿@page
+@model projectASP.Pages.NoteModel
+@{
+    ViewData["Title"] = "Note";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.note[0].CIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.note[0].matiere)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.note[0].note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.note[0].filiere)
+            </th>
+           
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.note)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CIN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.matiere)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.note)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.filiere)
+                </td>
+            </tr>
+
+        }
+
+
+    </tbody>
+
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

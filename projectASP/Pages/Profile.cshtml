@@ -1,0 +1,75 @@
+﻿@page
+@model projectASP.Pages.ProfileModel
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<table class="table">
+
+    <tbody>
+        <tr>
+            <th>
+                @Model.CIN
+            </th>
+            <th>
+                @Model.login
+            </th>
+            <th>
+                @Model.password
+            </th>
+            <th>
+                @Model.nom
+            </th>
+            <th>
+                @Model.prenom
+            </th>
+            <th>
+                @Model.datenaissance
+            </th>
+            <th>
+                @Model.email
+            </th>
+            <th>
+                @Model.tel
+            </th>
+            <th>
+                @Model.CNE
+            </th>
+            <th>
+                @Model.filiere
+            </th>
+            <th>
+                @Model.image
+            </th>
+
+            <th></th>
+        </tr>
+
+
+
+
+
+    </tbody>
+
+</table>
+
+<a asp-page="./EditProfile" asp-route-id="@Model.CIN">Edit</a> |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
