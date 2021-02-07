@@ -1,93 +1,115 @@
-﻿@page
+@page
 @model projectASP.Pages.Etudiants.IndexModel
 
-@{
-    ViewData["Title"] = "Index";
-}
+@{ ViewData["Title"] = "Index"; }
 
-<h1>Index</h1>
+    
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].login)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].nom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].prenom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].datenaissance)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].tel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].CNE)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].filiere)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].password)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].image)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Etudiant) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.login)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.prenom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.datenaissance)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.tel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CNE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.filiere)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.image)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.CIN">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.CIN">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.CIN">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <h1 style="text-align: center;" class="text-secondary">Gestion des Etudiants</h1>
+    <div class="container-fluid" style="margin-bottom:10px;">
+        <a type="button" class="btn btn-info" asp-page="Create"><i class="fas fa-plus"></i>&nbsp;Creer un Etudiant</a>
+    </div>
+
+
+    <div class="card rounded shadow border-0">
+        <div class="card-body bg-white rounded">
+            <div class="table-responsive">
+                <table id="example" style="width:100%" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Etudiant[0].login)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Etudiant[0].nom)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Etudiant[0].prenom)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Etudiant[0].datenaissance)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Etudiant[0].email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Etudiant[0].tel)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Etudiant[0].CNE)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Etudiant[0].filiere)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Etudiant[0].password)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Etudiant[0].image)
+                            </th>
+                            <th>
+                                Modifier
+                            </th>
+                            <th>
+                                Detailler
+                            </th>
+                            <th>
+                                Supprimer
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Etudiant)
+                        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.login)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prenom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.datenaissance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CNE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.filiere)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.image)
+                </td>
+                <td>
+                    <a  class="btn btn-success" asp-page="./Edit" asp-route-id="@item.CIN"><i class="fas fa-pencil-alt"></i></a>
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-page="./Details" asp-route-id="@item.CIN"><i class="fas fa-info-circle"></i></a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.CIN"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
 
 
 
