@@ -53,27 +53,40 @@ namespace projectASP.Pages
         }
 
 
-            public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync()
         {
-            CIN = HttpContext.Session.GetString("CIN");
-
-            var emptyEtudiant = new Etudiant(CIN);
-
-            if (await TryUpdateModelAsync<Etudiant>(
-                emptyEtudiant,
-                "etudiant",   // Prefix for form value.
-                s => s.login))
+            if (!ModelState.IsValid)
             {
-                 _context.Etudiants.Add(emptyEtudiant);
-                await _context.SaveChangesAsync();
-                return RedirectToPage("./Profile");
+                return Page();
             }
 
+            _context.Attach(Etudiant).State = EntityState.Modified;
 
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!EtudiantExists(Etudiant.CIN))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-            return Page();
+            return RedirectToPage("./Profile");
         }
 
-        
+        private bool EtudiantExists(string id)
+        {
+
+            return _context.Etudiants.Any(e => e.CIN == id);
+        }
+
+
     }
 }
