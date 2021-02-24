@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model projectASP.Pages.ProfileModel
 
 @{
@@ -6,55 +6,84 @@
 }
 
 <table class="table">
-
-    <tbody>
+    <thead>
         <tr>
             <th>
-                @Model.CIN
+                @Html.DisplayNameFor(model => model.Etudiant[0].CIN)
             </th>
             <th>
-                @Model.login
+                @Html.DisplayNameFor(model => model.Etudiant[0].login)
             </th>
             <th>
-                @Model.password
+                @Html.DisplayNameFor(model => model.Etudiant[0].nom)
             </th>
             <th>
-                @Model.nom
+                @Html.DisplayNameFor(model => model.Etudiant[0].prenom)
             </th>
             <th>
-                @Model.prenom
+                @Html.DisplayNameFor(model => model.Etudiant[0].datenaissance)
             </th>
             <th>
-                @Model.datenaissance
+                @Html.DisplayNameFor(model => model.Etudiant[0].email)
             </th>
             <th>
-                @Model.email
+                @Html.DisplayNameFor(model => model.Etudiant[0].tel)
             </th>
             <th>
-                @Model.tel
+                @Html.DisplayNameFor(model => model.Etudiant[0].CNE)
             </th>
             <th>
-                @Model.CNE
+                @Html.DisplayNameFor(model => model.Etudiant[0].filiere)
             </th>
             <th>
-                @Model.filiere
+                @Html.DisplayNameFor(model => model.Etudiant[0].password)
             </th>
-            <th>
-                @Model.image
-            </th>
-
             <th></th>
         </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Etudiant)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.datenaissance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CNE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.filiere)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
 
-
-
-
-
+            <td>
+                <a asp-page="./EditProfile" asp-route-id="@item.CIN">Edit</a> 
+            </td></tr>
+        }
     </tbody>
-
 </table>
 
-<a asp-page="./EditProfile" asp-route-id="@Model.CIN">Edit</a> |
+
 
 
 
