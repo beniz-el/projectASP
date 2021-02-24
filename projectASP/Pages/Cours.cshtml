@@ -1,5 +1,58 @@
-﻿@page
+@page
 @model projectASP.Pages.CoursModel
 @{
     ViewData["Title"] = "Cours";
 }
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cour[0].nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cour[0].semestre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cour[0].date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cour[0].filiere)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cour[0].lien)
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Cour)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.semestre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.filiere)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lien)
+            </td>
+        </tr>
+
+        }
+
+
+    </tbody>
+
+</table>
