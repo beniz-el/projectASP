@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using projectASP.Data;
+using System.Web.Mvc;
 
 namespace projectASP
 {
@@ -59,6 +60,11 @@ namespace projectASP
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "Default",
+                    pattern: "{controller}/{action}/{id}",
+                    defaults: new { controller = "EmailSetup", action = "Demande", id = UrlParameter.Optional }
+                );
                 endpoints.MapRazorPages();
             });
         }
