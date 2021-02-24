@@ -1,5 +1,53 @@
-﻿@page
+@page
 @model projectASP.Pages.AbsenceModel
 @{
     ViewData["Title"] = "Absence";
 }
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Absence[0].CNE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Absence[0].CIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Absence[0].matiere)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Absence[0].date)
+            </th>
+
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Absence)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CNE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CIN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.matiere)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+            </tr>
+
+        }
+
+
+    </tbody>
+
+</table>
+
