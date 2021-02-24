@@ -1,5 +1,64 @@
-﻿@page
+@page
 @model projectASP.Pages.ProjetsModel
 @{
     ViewData["Title"] = "Projets";
 }
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Projet[0].nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projet[0].CIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projet[0].semestre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projet[0].date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projet[0].filiere)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projet[0].sujet)
+            </th>
+
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Projet)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.semestre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.filiere)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sujet)
+            </td>
+        </tr>
+
+        }
+
+
+    </tbody>
+
+</table>
