@@ -1,0 +1,79 @@
+﻿@page
+@model projectASP.Pages.ProfileProfModel
+@{
+    ViewData["Title"] = "Professeur";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Professeur[0].CIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professeur[0].login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professeur[0].nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professeur[0].prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professeur[0].datenaissance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professeur[0].email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professeur[0].tel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professeur[0].matierespecialise)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professeur[0].password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Professeur)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CIN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.login)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prenom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.datenaissance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.matierespecialise)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.password)
+                </td>
+
+                <td>
+                    <a asp-page="./EditProfilProf" asp-route-id="@item.CIN">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
