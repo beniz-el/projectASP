@@ -1,73 +1,98 @@
-﻿@page
+@page
 @model projectASP.Pages.Profs.DetailsModel
 
-@{
-    ViewData["Title"] = "Details";
-}
+@{ ViewData["Title"] = "Details"; }
+<h1 style="text-align: center;" class="text-secondary">Details de l' Etudiant</h1>
 
-<h1>Details</h1>
 
-<div>
-    <h4>Professeur</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Professeur.login)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Professeur.login)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Professeur.nom)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Professeur.nom)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Professeur.prenom)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Professeur.prenom)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Professeur.datenaissance)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Professeur.datenaissance)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Professeur.email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Professeur.email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Professeur.tel)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Professeur.tel)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Professeur.image)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Professeur.image)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Professeur.matierespecialise)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Professeur.matierespecialise)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Professeur.password)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Professeur.password)
-        </dd>
-    </dl>
+
+<hr />
+<div class="pos">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="container-fluid">
+
+                    <!--CARDS start here-->
+                    <div class="card card-1  text-md-center" id="card1">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <td><span class="bold">  @Html.DisplayNameFor(model => model.Professeur.login) </span></td>
+                                    <td>
+                                        <p>
+                                            @Html.DisplayNameFor(model => model.Professeur.login)
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="bold">  @Html.DisplayNameFor(model => model.Professeur.password) </span></td>
+                                    <td>
+                                        <p>
+                                            @Html.DisplayNameFor(model => model.Professeur.password)
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="bold"> @Html.DisplayNameFor(model => model.Professeur.nom) </span></td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Professeur.nom)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="bold">  @Html.DisplayNameFor(model => model.Professeur.prenom) </span></td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Professeur.prenom)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="bold">  @Html.DisplayNameFor(model => model.Professeur.datenaissance) </span></td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Professeur.datenaissance)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="bold">  @Html.DisplayNameFor(model => model.Professeur.email) </span></td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Professeur.email)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="bold">  @Html.DisplayNameFor(model => model.Professeur.tel) </span></td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Professeur.tel)
+                                    </td>
+                                </tr>
+
+
+
+
+
+                                <tr>
+                                    <td><span class="bold">  @Html.DisplayNameFor(model => model.Professeur.image) </span></td>
+                                    <td>
+                                        @Html.DisplayNameFor(model => model.Professeur.image)
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><span class="bold">@Html.DisplayNameFor(model => model.Professeur.matierespecialise)</span></td>
+                                    <td colspan="2">@Html.DisplayFor(model => model.Professeur.matierespecialise)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pos1">
+                            <a class="btn btn-info" asp-page="./Edit" asp-route-id="@Model.Professeur.CIN"><i class="fas fa-pencil-alt"></i> Modifier</a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Professeur.CIN">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+
+
