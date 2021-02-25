@@ -64,7 +64,7 @@ namespace projectASP.Pages
                     HttpContext.Session.SetString("CNE", dr["CNE"].ToString());
                     HttpContext.Session.SetString("filiere", dr["filiere"].ToString());
                     HttpContext.Session.SetString("image", dr["image"].ToString()); 
-                    return RedirectToPage("./Etudiant");
+                    return RedirectToPage("./Profile");
 
                 }
                 else
