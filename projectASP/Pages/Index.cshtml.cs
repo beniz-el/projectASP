@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -30,7 +30,7 @@ namespace projectASP.Pages
        
         void connectionString()
         {
-            con.ConnectionString = "data source=DESKTOP-T04GUV1; database=ASP; integrated security =SSPI;";
+            con.ConnectionString = "data source=localhost; database=ASP; integrated security =SSPI;";
         }
 
 
@@ -105,10 +105,6 @@ namespace projectASP.Pages
             
 
         }
-
-
-
-
 
 
 
