@@ -1,0 +1,48 @@
+﻿@page
+@model projectASP.Pages.Notes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Note[0].matiere)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note[0].note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note[0].filiere)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Note) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.matiere)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.filiere)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CIN">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CIN">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CIN">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
