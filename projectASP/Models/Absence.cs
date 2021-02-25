@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,5 +13,8 @@ namespace projectASP.Models
          public string CIN { get; set; }
         public string matiere { get; set; }
         public string date { get; set; }
+        public string justification { get; set; }
+        public string note { get; set; }
     }
 }
+
