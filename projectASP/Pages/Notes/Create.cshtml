@@ -1,0 +1,49 @@
+@page
+@model projectASP.Pages.Notes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Note</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Note.CIN" class="control-label"></label>
+                <input asp-for="Note.CIN" class="form-control" />
+                <span asp-validation-for="Note.CIN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note.matiere" class="control-label"></label>
+                <input asp-for="Note.matiere" class="form-control" />
+                <span asp-validation-for="Note.matiere" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note.note" class="control-label"></label>
+                <input asp-for="Note.note" class="form-control" />
+                <span asp-validation-for="Note.note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note.filiere" class="control-label"></label>
+                <input asp-for="Note.filiere" class="form-control" />
+                <span asp-validation-for="Note.filiere" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
