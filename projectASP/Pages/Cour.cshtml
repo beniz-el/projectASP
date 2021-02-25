@@ -1,6 +1,10 @@
 ﻿@page
-@model projectASP.Pages.NoteModel
-@{ Layout = "~/Pages/Shared/_LayoutEtudiant.cshtml"; }
+@model projectASP.Pages.CoursModel
+@{ ViewData["Title"] = "Cour";
+    Layout = "~/Pages/Shared/_LayoutEtudiant.cshtml";}
+
+
+
 <div class="card rounded shadow border-0">
     <div class="card-body bg-white rounded">
         <div class="table-responsive">
@@ -8,16 +12,19 @@
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.note[0].CIN)
+                            @Html.DisplayNameFor(model => model.Cour[0].nom)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.note[0].matiere)
+                            @Html.DisplayNameFor(model => model.Cour[0].semestre)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.note[0].note)
+                            @Html.DisplayNameFor(model => model.Cour[0].date)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.note[0].filiere)
+                            @Html.DisplayNameFor(model => model.Cour[0].filiere)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cour[0].lien)
                         </th>
 
 
@@ -26,20 +33,23 @@
                 </thead>
                 <tbody>
 
-                    @foreach (var item in Model.note)
+                    @foreach (var item in Model.Cour)
                     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CIN)
+                @Html.DisplayFor(modelItem => item.nom)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.matiere)
+                @Html.DisplayFor(modelItem => item.semestre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.note)
+                @Html.DisplayFor(modelItem => item.date)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.filiere)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lien)
             </td>
         </tr>}
 
@@ -50,23 +60,5 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

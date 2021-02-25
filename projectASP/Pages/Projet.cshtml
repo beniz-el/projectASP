@@ -1,5 +1,5 @@
 ﻿@page
-@model projectASP.Pages.NoteModel
+@model projectASP.Pages.ProjetsModel
 @{ Layout = "~/Pages/Shared/_LayoutEtudiant.cshtml"; }
 <div class="card rounded shadow border-0">
     <div class="card-body bg-white rounded">
@@ -8,17 +8,24 @@
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.note[0].CIN)
+                            @Html.DisplayNameFor(model => model.Projet[0].nom)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.note[0].matiere)
+                            @Html.DisplayNameFor(model => model.Projet[0].CIN)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.note[0].note)
+                            @Html.DisplayNameFor(model => model.Projet[0].semestre)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.note[0].filiere)
+                            @Html.DisplayNameFor(model => model.Projet[0].date)
                         </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Projet[0].filiere)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Projet[0].sujet)
+                        </th>
+
 
 
                         <th></th>
@@ -26,20 +33,26 @@
                 </thead>
                 <tbody>
 
-                    @foreach (var item in Model.note)
+                    @foreach (var item in Model.Projet)
                     {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CIN)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.matiere)
+                @Html.DisplayFor(modelItem => item.semestre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.note)
+                @Html.DisplayFor(modelItem => item.date)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.filiere)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sujet)
             </td>
         </tr>}
 
@@ -50,23 +63,4 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
