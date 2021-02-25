@@ -1,77 +1,102 @@
-﻿@page
+@page
 @model projectASP.Pages.Profs.CreateModel
 
-@{
-    ViewData["Title"] = "Create";
-}
+@{ ViewData["Title"] = "Create"; }
 
-<h1>Create</h1>
 
-<h4>Professeur</h4>
+
+<h1 style="text-align: center;" class="text-secondary">Creer un professeur</h1>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Professeur.CIN" class="control-label"></label>
-                <input asp-for="Professeur.CIN" class="form-control" />
-                <span asp-validation-for="Professeur.CIN" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Professeur.login" class="control-label"></label>
-                <input asp-for="Professeur.login" class="form-control" />
-                <span asp-validation-for="Professeur.login" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Professeur.nom" class="control-label"></label>
-                <input asp-for="Professeur.nom" class="form-control" />
-                <span asp-validation-for="Professeur.nom" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Professeur.prenom" class="control-label"></label>
-                <input asp-for="Professeur.prenom" class="form-control" />
-                <span asp-validation-for="Professeur.prenom" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Professeur.datenaissance" class="control-label"></label>
-                <input asp-for="Professeur.datenaissance" class="form-control" />
-                <span asp-validation-for="Professeur.datenaissance" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Professeur.email" class="control-label"></label>
-                <input asp-for="Professeur.email" class="form-control" />
-                <span asp-validation-for="Professeur.email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Professeur.tel" class="control-label"></label>
-                <input asp-for="Professeur.tel" class="form-control" />
-                <span asp-validation-for="Professeur.tel" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Professeur.image" class="control-label"></label>
-                <input asp-for="Professeur.image" class="form-control" />
-                <span asp-validation-for="Professeur.image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Professeur.matierespecialise" class="control-label"></label>
-                <input asp-for="Professeur.matierespecialise" class="form-control" />
-                <span asp-validation-for="Professeur.matierespecialise" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Professeur.password" class="control-label"></label>
-                <input asp-for="Professeur.password" class="form-control" />
-                <span asp-validation-for="Professeur.password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+<div class="pos">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-10 mx-auto" style="margin-top:10px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight: bold;">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
 
-<div>
-    <a asp-page="Index">Back to List</a>
+                            <label asp-for="Professeur.CIN" class="control-label"></label>
+                            <input asp-for="Professeur.CIN" class="form-control" />
+                            <span asp-validation-for="Professeur.CIN" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6">
+
+                            <label asp-for="Professeur.login" class="control-label"></label>
+                            <input asp-for="Professeur.login" class="form-control" />
+                            <span asp-validation-for="Professeur.login" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label asp-for="Professeur.nom" class="control-label"></label>
+                            <input asp-for="Professeur.nom" class="form-control" />
+                            <span asp-validation-for="Professeur.nom" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label asp-for="Professeur.prenom" class="control-label"></label>
+                            <input asp-for="Professeur.prenom" class="form-control" />
+                            <span asp-validation-for="Professeur.prenom" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label asp-for="Professeur.datenaissance" class="control-label"></label>
+                            <input asp-for="Professeur.datenaissance" class="form-control" />
+                            <span asp-validation-for="Professeur.datenaissance" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label asp-for="Professeur.email" class="control-label"></label>
+                            <input asp-for="Professeur.email" class="form-control" />
+                            <span asp-validation-for="Professeur.email" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label asp-for="Professeur.tel" class="control-label"></label>
+                            <input asp-for="Professeur.tel" class="form-control" />
+                            <span asp-validation-for="Professeur.tel" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label asp-for="Professeur.matierespecialise" class="control-label"></label>
+                            <input asp-for="Professeur.matierespecialise" class="form-control" />
+                            <span asp-validation-for="Professeur.matierespecialise" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+
+                            <label asp-for="Professeur.password" class="control-label"></label>
+                            <input asp-for="Professeur.password" class="form-control" />
+                            <span asp-validation-for="Professeur.password" class="text-danger"></span>
+                   </div>
+                        <div class="col-sm-6">
+
+                            <label asp-for="Professeur.image" class="control-label"></label>
+                            <input asp-for="Professeur.image" class="form-control" />
+                            <span asp-validation-for="Professeur.image" class="text-danger"></span>
+                           
+                        </div>
+                    </div>
+                    <button style="margin-bottom:10px;" type="submit" id="sidebarCollapse" class="btn btn-info">
+
+                        <span><i class="fas fa-plus"></i>Ajouter</span>
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 @section Scripts {
