@@ -3,58 +3,82 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_LayoutProfesseur.cshtml";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Cour[0].CIN)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cour[0].semestre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cour[0].date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cour[0].filiere)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cour[0].lien)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Cour) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CIN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.semestre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.filiere)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.lien)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.nom">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.nom">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.nom">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<h1 style="text-align: center;" class="text-secondary">Gestion des cours</h1>
+<div class="container-fluid" style="margin-bottom:10px;">
+    <a type="button" class="btn btn-info" asp-page="Create"><i class="fas fa-plus"></i>&nbsp;Creer un cour</a>
+</div>
+
+
+<div class="card rounded shadow border-0">
+    <div class="card-body bg-white rounded">
+        <div class="table-responsive">
+            <table id="example" style="width:100%" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cour[0].CIN)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cour[0].semestre)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cour[0].date)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cour[0].filiere)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cour[0].lien)
+                        </th>
+                        <th>
+                            Modifier
+                        </th>
+                        <th>
+                            Detailler
+                        </th>
+                        <th>
+                            Supprimer
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Cour)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CIN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.semestre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.filiere)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.lien)
+                        </td>
+                   
+                        <td>
+                            <a class="btn btn-success" asp-page="./Edit" asp-route-id="@item.nom"><i class="fas fa-pencil-alt"></i></a>
+                        </td>
+                        <td>
+                            <a class="btn btn-warning" asp-page="./Details" asp-route-id="@item.nom"><i class="fas fa-info-circle"></i></a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.nom"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
