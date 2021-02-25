@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using projectASP.Data;
 using projectASP.Models;
 
-namespace projectASP.Pages.Cours
+namespace projectASP.Pages.Absences
 {
     public class DetailsModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace projectASP.Pages.Cours
             _context = context;
         }
 
-        public Cour Cour { get; set; }
+        public Absence Absence { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -28,9 +28,9 @@ namespace projectASP.Pages.Cours
                 return NotFound();
             }
 
-            Cour = await _context.Cours.FirstOrDefaultAsync(m => m.nom == id);
+            Absence = await _context.Absences.FirstOrDefaultAsync(m => m.CNE == id);
 
-            if (Cour == null)
+            if (Absence == null)
             {
                 return NotFound();
             }

@@ -1,49 +1,68 @@
 ﻿@page
-@model projectASP.Pages.Cours.DetailsModel
+@model projectASP.Pages.Absences.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_LayoutProfesseur.cshtml";
 }
 
-<h1>Details</h1>
 
-<div>
-    <h4>Cour</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cour.CIN)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cour.CIN)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cour.semestre)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cour.semestre)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cour.date)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cour.date)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cour.filiere)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cour.filiere)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cour.lien)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cour.lien)
-        </dd>
-    </dl>
+
+<h1 style="text-align: center;" class="text-secondary">Details de de l'absence</h1>
+
+
+
+<hr />
+<div class="pos">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="container-fluid">
+
+                    <!--CARDS start here-->
+                    <div class="card card-1  text-md-center" id="card1">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <td><span class="bold">   @Html.DisplayNameFor(model => model.Absence.CIN) </span></td>
+                                    <td>
+                                        <p>
+                                            @Html.DisplayNameFor(model => model.Absence.CIN)
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="bold"> @Html.DisplayNameFor(model => model.Absence.matiere) </span></td>
+                                    <td>
+                                        @Html.DisplayNameFor(model => model.Absence.matiere)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="bold">  @Html.DisplayNameFor(model => model.Absence.date) </span></td>
+                                    <td>
+                                        @Html.DisplayNameFor(model => model.Absence.date)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="bold">   @Html.DisplayNameFor(model => model.Absence.justification) </span></td>
+                                    <td>
+                                        @Html.DisplayNameFor(model => model.Absence.justification)
+                                    </td>
+                                </tr>
+                            
+                            </tbody>
+                        </table>
+                        <div class="pos1">
+                            <a class="btn btn-info" asp-page="./Edit" asp-route-id="@Model.Absence.CNE"><i class="fas fa-pencil-alt"></i> Modifier</a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Cour.nom">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+

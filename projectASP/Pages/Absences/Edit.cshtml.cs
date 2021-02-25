@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using projectASP.Data;
 using projectASP.Models;
 
-namespace projectASP.Pages.Cours
+namespace projectASP.Pages.Absences
 {
     public class EditModel : PageModel
     {
@@ -21,7 +21,7 @@ namespace projectASP.Pages.Cours
         }
 
         [BindProperty]
-        public Cour Cour { get; set; }
+        public Absence Absence { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -30,9 +30,9 @@ namespace projectASP.Pages.Cours
                 return NotFound();
             }
 
-            Cour = await _context.Cours.FirstOrDefaultAsync(m => m.nom == id);
+            Absence = await _context.Absences.FirstOrDefaultAsync(m => m.CNE == id);
 
-            if (Cour == null)
+            if (Absence == null)
             {
                 return NotFound();
             }
@@ -48,7 +48,7 @@ namespace projectASP.Pages.Cours
                 return Page();
             }
 
-            _context.Attach(Cour).State = EntityState.Modified;
+            _context.Attach(Absence).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace projectASP.Pages.Cours
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CourExists(Cour.nom))
+                if (!AbsenceExists(Absence.CNE))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace projectASP.Pages.Cours
             return RedirectToPage("./Index");
         }
 
-        private bool CourExists(string id)
+        private bool AbsenceExists(string id)
         {
-            return _context.Cours.Any(e => e.nom == id);
+            return _context.Absences.Any(e => e.CNE == id);
         }
     }
 }

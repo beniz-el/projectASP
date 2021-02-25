@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using projectASP.Data;
 using projectASP.Models;
 
-namespace projectASP.Pages.Cours
+namespace projectASP.Pages.Absences
 {
     public class IndexModel : PageModel
     {
@@ -19,11 +19,11 @@ namespace projectASP.Pages.Cours
             _context = context;
         }
 
-        public IList<Cour> Cour { get;set; }
+        public IList<Absence> Absence { get;set; }
 
         public async Task OnGetAsync()
         {
-            Cour = await _context.Cours.ToListAsync();
+            Absence = await _context.Absences.ToListAsync();
         }
     }
 }

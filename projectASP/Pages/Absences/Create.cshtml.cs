@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using projectASP.Data;
 using projectASP.Models;
 
-namespace projectASP.Pages.Cours
+namespace projectASP.Pages.Absences
 {
     public class CreateModel : PageModel
     {
@@ -25,7 +25,7 @@ namespace projectASP.Pages.Cours
         }
 
         [BindProperty]
-        public Cour Cour { get; set; }
+        public Absence Absence { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,7 +35,7 @@ namespace projectASP.Pages.Cours
                 return Page();
             }
 
-            _context.Cours.Add(Cour);
+            _context.Absences.Add(Absence);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

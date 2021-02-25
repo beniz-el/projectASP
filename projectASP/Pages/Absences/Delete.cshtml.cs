@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using projectASP.Data;
 using projectASP.Models;
 
-namespace projectASP.Pages.Cours
+namespace projectASP.Pages.Absences
 {
     public class DeleteModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace projectASP.Pages.Cours
         }
 
         [BindProperty]
-        public Cour Cour { get; set; }
+        public Absence Absence { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -29,9 +29,9 @@ namespace projectASP.Pages.Cours
                 return NotFound();
             }
 
-            Cour = await _context.Cours.FirstOrDefaultAsync(m => m.nom == id);
+            Absence = await _context.Absences.FirstOrDefaultAsync(m => m.CNE == id);
 
-            if (Cour == null)
+            if (Absence == null)
             {
                 return NotFound();
             }
@@ -45,11 +45,11 @@ namespace projectASP.Pages.Cours
                 return NotFound();
             }
 
-            Cour = await _context.Cours.FindAsync(id);
+            Absence = await _context.Absences.FindAsync(id);
 
-            if (Cour != null)
+            if (Absence != null)
             {
-                _context.Cours.Remove(Cour);
+                _context.Absences.Remove(Absence);
                 await _context.SaveChangesAsync();
             }
 

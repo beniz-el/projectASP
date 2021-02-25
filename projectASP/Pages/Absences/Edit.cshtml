@@ -1,54 +1,56 @@
 ﻿@page
-@model projectASP.Pages.Cours.EditModel
+@model projectASP.Pages.Absences.EditModel
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_LayoutProfesseur.cshtml";
 }
 
-<h1>Edit</h1>
-
-<h4>Cour</h4>
+<h1 style="text-align: center;" class="text-secondary">Modifier une absence</h1>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Cour.nom" />
-            <div class="form-group">
-                <label asp-for="Cour.CIN" class="control-label"></label>
-                <input asp-for="Cour.CIN" class="form-control" />
-                <span asp-validation-for="Cour.CIN" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cour.semestre" class="control-label"></label>
-                <input asp-for="Cour.semestre" class="form-control" />
-                <span asp-validation-for="Cour.semestre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cour.date" class="control-label"></label>
-                <input asp-for="Cour.date" class="form-control" />
-                <span asp-validation-for="Cour.date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cour.filiere" class="control-label"></label>
-                <input asp-for="Cour.filiere" class="form-control" />
-                <span asp-validation-for="Cour.filiere" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cour.lien" class="control-label"></label>
-                <input asp-for="Cour.lien" class="form-control" />
-                <span asp-validation-for="Cour.lien" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="card">
+    <div class="row">
+        <div class="col-md-10 mx-auto" style="margin-top:10px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight: bold;">
+            <form method="post">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Absence.CNE" />
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label asp-for="Absence.CIN" class="control-label"></label>
+                        <input asp-for="Absence.CIN" class="form-control" />
+                        <span asp-validation-for="Absence.CIN" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-6">
+                        <label asp-for="Absence.matiere" class="control-label"></label>
+                        <input asp-for="Absence.matiere" class="form-control" />
+                        <span asp-validation-for="Absence.matiere" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label asp-for="Absence.date" class="control-label"></label>
+                        <input asp-for="Absence.date" class="form-control" />
+                        <span asp-validation-for="Absence.date" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-6">
+                        <label asp-for="Absence.justification" class="control-label"></label>
+                        <input asp-for="Absence.justification" class="form-control" />
+                        <span asp-validation-for="Absence.justification" class="text-danger"></span>
+                    </div>
+                </div>
+                <button style="margin-bottom:10px;" type="submit" id="sidebarCollapse" class="btn btn-info">
+
+                    <span><i class="fas fa-plus"></i>Modifier</span>
+                </button>
+               
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
