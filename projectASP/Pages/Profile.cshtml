@@ -3,85 +3,98 @@
 
 @{
     ViewData["Title"] = "Profile";
+    Layout = "~/Pages/Shared/_LayoutEtudiant.cshtml";
+
 }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].CIN)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].login)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].nom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].prenom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].datenaissance)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].tel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].CNE)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].filiere)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Etudiant[0].password)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Etudiant)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CIN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.login)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.prenom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.datenaissance)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.tel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CNE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.filiere)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.password)
-            </td>
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 450px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
 
-            <td>
-                <a asp-page="./EditProfile" asp-route-id="@item.CIN">Edit</a> 
-            </td></tr>
-        }
-    </tbody>
-</table>
+    .title {
+        color: grey;
+        font-size: 18px;
+    }
+
+    pbutton {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: red;
+        background-color:#7386D5;
+        color: #fff; 
+        text-align: center;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    b {
+        color: black;
+    }
+    a {
+        text-decoration: none;
+        font-size: 22px;
+        color: black;
+    }
+
+       
+</style>
+
+
+
+
+
+
+<div class="card" style="margin-bottom:45px;">
+
+    @foreach (var item in Model.Etudiant)
+
+    {
+        <img img class='rounded-circle mr-2' width='200' height='200' style="margin-left:130px; margin-top:15px" ; src="@Html.DisplayFor(modelItem => item.image)">
+
+        <h1 style="font-size:30px;">
+            @Html.DisplayFor(modelItem => item.nom)
+
+            @Html.DisplayFor(modelItem => item.prenom)
+        </h1>
+
+
+        <p class="title">
+            <b>Login : </b>
+            @Html.DisplayFor(modelItem => item.login)
+        </p>
+        <p><b>Password : </b>@Html.DisplayFor(modelItem => item.password)</p>
+        <p><b>CIN : </b> @Html.DisplayFor(modelItem => item.CIN)</p>
+
+        <p><b>Date de naissance : </b> @Html.DisplayFor(modelItem => item.datenaissance)</p>
+
+
+        <p><b style="color:black">Email : </b>@Html.DisplayFor(modelItem => item.email)</p>
+
+        <p><b>Téléphone : </b> @Html.DisplayFor(modelItem => item.tel)</p>
+
+        <p><b>CNE : </b>@Html.DisplayFor(modelItem => item.CNE)</p>
+
+        <p><b>Filière : </b>@Html.DisplayFor(modelItem => item.filiere)</p>
+
+
+
+        <pbutton><a asp-page="./EditProfile" asp-route-id="@item.CIN"> Modifier</a></pbutton>
+
+
+    }
+
+</div>
+
+
+
+
 
 
 
