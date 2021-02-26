@@ -14,7 +14,6 @@ namespace projectASP.Models
         public string matiere { get; set; }
         public string date { get; set; }
         public string justification { get; set; }
-        public string note { get; set; }
     }
 }
 
