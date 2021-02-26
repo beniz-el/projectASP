@@ -83,9 +83,9 @@ namespace projectASP.Pages
                         HttpContext.Session.SetString("email", dr["email"].ToString());
                         HttpContext.Session.SetString("tel", dr["tel"].ToString());
                         HttpContext.Session.SetString("matierespecialise", dr["matierespecialise"].ToString());
-                        HttpContext.Session.SetString("filiere", dr["filiere"].ToString());
+                    
                         HttpContext.Session.SetString("image", dr["image"].ToString());
-                        return RedirectToPage("./Professeur");
+                        return RedirectToPage("./ProfileProf");
 
                     }
                     else
@@ -99,12 +99,16 @@ namespace projectASP.Pages
             else
             {
                 HttpContext.Session.SetString("login", dr["login"].ToString());
-                return RedirectToPage("./Admin");
+                return RedirectToPage("./Profs/Index");
             }
           
             
 
         }
+
+
+
+
 
 
 
